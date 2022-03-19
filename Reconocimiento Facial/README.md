@@ -6,4 +6,6 @@
 * Finalmente ejecutar el archivo **_reconocimiento.py_** disponible dentro del directorio de cada modelo de reconocimiento. Se abrirá la cámara del computador y se podrá realizar el reconocimiento facial.
 
 ### MODELO PREENTRENADO FACE-RECOGNITION.
-* El modelo preent
+* El modelo preentrenado Face-Recognition requiere tener una base de datos que contenga únicamente una fotografía de cada usuario.
+* Este modelo ya incluye un detector facial, por tanto no es necesario ejecutar uno externo.
+* Para realizar el reconocimiento de rostros ejecutar el archivo **_reconocer.py_**.
