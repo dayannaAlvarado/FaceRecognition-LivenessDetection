@@ -1,6 +1,6 @@
 # FaceRecognition-LivenessDetection
 
-El presente proyecto almacena los modelos creados en el trabajo de titulación denominado "Prototipo de reconocimiento facial para el registro de asistencia al laboratorio de software de CIS-UNL"
+El presente proyecto almacena los modelos empleados en el trabajo de titulación denominado "Prototipo de reconocimiento facial para el registro de asistencia al laboratorio de software de CIS-UNL"
 
 
 Descripción de las Carpetas.
