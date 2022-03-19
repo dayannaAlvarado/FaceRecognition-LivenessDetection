@@ -4,7 +4,7 @@ El presente proyecto almacena los modelos creados en el trabajo de titulación d
 
 
 Descripción de las Carpetas.
-1. Reconocimiento Facial: Almacena los modelos Eige-Face, Fisher-Face y LBPH-Face.
+1. Reconocimiento Facial: Almacena los modelos Eigen-Face, Fisher-Face y LBPH-Face.
 2. Detección de Vida: Almacena los modelos de Contador de parpadeos y análisis de profundidad.
 
 
