@@ -15,7 +15,7 @@ def drowing_output(frame, coordinates_left_eye, coordinates_right_eye, blink_cou
     if(blink_counter>parpadeos):
         cv2.putText(output, "Parpadeos Excedidos", (10,50), cv2.FONT_HERSHEY_COMPLEX, 0.7,(0,0,255),2)
     if(blink_counter==parpadeos):
-        cv2.putText(output, "Asistencia registrada", (10,50), cv2.FONT_HERSHEY_COMPLEX, 0.7,(0,255,0),2)
+        cv2.putText(output, "REAL", (10,50), cv2.FONT_HERSHEY_COMPLEX, 0.7,(0,255,0),2)
     return output
 
 def eye_aspect_ratio(coordinates):
