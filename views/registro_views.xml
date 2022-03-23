@@ -1,0 +1,92 @@
+<odoo>
+    <data>
+         <record model="ir.ui.view" id="view_registro_tree">
+            <field name="name">asistencias.registro.tree</field>
+            <field name="model">asistencias.registro</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Registros" >
+                    <field name="laboratorio_name"></field>
+                    <field name="fecha"></field>
+                    <field name="nombre_estudiante"></field>
+                    <field name="apellido_estudiante"></field>
+                    <field name="usuario"></field>
+                    <!--<field name="horas_usadas"></field>-->
+                </tree>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="view_registro_form">
+            <field name="name">asistencias.registro.form</field>
+            <field name="model">asistencias.registro</field>
+            <field name="arch" type="xml">
+                <form string= "Registro"  options= "{'no_create': True, 'no_create_edit': True}" >
+                    <header>
+                        <button type="object" name="action_reconocer"  string="Registrar Asistencia" class="oe_highlight"/>
+                        <!--<button onclick="streaming()" string="Captura" class="oe_highlight"/>
+                        <button type="object" name="captura" string="Prueba" class="oe_highlight"/>-->
+                    </header>
+                  <!-- <sheet>
+                        <group name="group_top" colspan="4">
+                            <group name="group_left">
+                            <field name="fecha"  string="Fecha y Hora" readonly="1"></field>
+                            <field name="nombre_estudiante" readonly="1" ></field>
+                            <field name="apellido_estudiante" readonly="1" ></field>
+                             <field name="usuario" string="Usuario" readonly="1" ></field>
+
+                                <field name ="laboratorio_name" readonly="1" ></field>
+                                </group>
+                            <group name="group_right">
+
+                        </group>
+                        </group>
+
+                    </sheet>-->
+                    <video  id="videoElement" autoplay="true" style="width:500px;height:500px;" > </video>
+
+                        <xpath expr="//form" position="inside">
+                            <script>
+                                function streaming(){
+                                    const videos= document.getElementById("videoElement")
+                                    navigator.mediaDevices.getUserMedia({video:true})
+                                    .then(
+                                        (stream)=>{
+                                            videos.srcObject=stream;
+                                            console.log("stream")
+
+                                            return videos
+                                            }
+                                        )
+                                    .catch((error)=>{
+                                        console.log(error);}
+                                    )
+                                }
+                            </script>
+                        </xpath>
+
+                    <footer>
+
+
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <!-- actions opening views on models -->
+       <record model="ir.actions.act_window" id="action_view_registro">
+            <field name="name">Registro</field>
+            <field name="res_model">asistencias.registro</field>
+            <field name="type" >ir.actions.act_window</field>
+
+            <field name="view_mode">tree,form</field>
+
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Crea un nuevo registro</p>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+
+
+

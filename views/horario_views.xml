@@ -1,0 +1,58 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="view_horario_form">
+            <field name="name">asistencias.horario.form</field>
+            <field name="model">asistencias.horario</field>
+            <field name="arch" type="xml">
+                <form string="Horario">
+                    <sheet>
+                            <group>
+                                <field name="hora_inicio" ></field>
+                                <field name="hora_fin" ></field>
+                                <field name="dia_semana" ></field>
+                                 <field name="ciclo" ></field>
+                                <field name="carrera_name" ></field>
+                                <field name="materia_name" ></field>
+                                <field name="docente_name" ></field>
+
+                            </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_horario_tree">
+            <field name="name">asistencias.horario.tree</field>
+            <field name="model">asistencias.horario</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Horarios">
+                    <field name="hora_inicio" ></field>
+                                <field name="hora_fin" ></field>
+                                <field name="dia_semana" ></field>
+                                 <field name="ciclo" ></field>
+                                <field name="carrera_name" ></field>
+                                <field name="materia_name" ></field>
+                                <field name="docente_name" ></field>
+                </tree>
+            </field>
+        </record>
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="action_view_horario">
+            <field name="name">Horario</field>
+            <field name="res_model">asistencias.horario</field>
+            <field name="type" >ir.actions.act_window</field>
+
+            <field name="view_mode">tree,form</field>
+
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Crear nueva Horario</p>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+
+
+

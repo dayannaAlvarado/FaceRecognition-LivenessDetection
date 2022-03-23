@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_asistencias_estudiante,asistencias.estudiante,model_asistencias_estudiante,base.group_user,1,1,1,1
+access_asistencias_registro,asistencias.registro,model_asistencias_registro,base.group_user,1,1,1,1
+access_asistencias_docente,asistencias.docente,model_asistencias_docente,base.group_user,1,1,1,1
+access_asistencias_carrera,asistencias.carrera,model_asistencias_carrera,base.group_user,1,1,1,1
+access_asistencias_materia,asistencias.materia,model_asistencias_materia,base.group_user,1,1,1,1
+access_asistencias_horario,asistencias.horario,model_asistencias_horario,base.group_user,1,1,1,1
