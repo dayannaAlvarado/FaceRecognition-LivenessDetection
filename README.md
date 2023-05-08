@@ -4,7 +4,7 @@ El presente proyecto almacena los modelos empleados en el trabajo de titulación
 
 
 Descripción de las Carpetas.
-1. Reconocimiento Facial: Almacena los modelos Eigen-Face, Fisher-Face y LBPH-Face.
+1. Reconocimiento Facial: Almacena los modelos Eigen-Face, Fisher-Face, LBPH-Face y Face-Recognition.
 2. Detección de Vida: Almacena los modelos de Contador de parpadeos y análisis de profundidad.
 3. En la brecha master se encuentra el módulo de registro de asistencia con los modelos Face-Reognition y Análisis de profundidad, desarollado en Odoo 13 y Python 3.7
 
