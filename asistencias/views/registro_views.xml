@@ -1,0 +1,56 @@
+<odoo>
+    <data>
+        <template id="assets_backend" inherit_id="web.assets_backend"  name="web">
+        </template>
+         <record model="ir.ui.view" id="view_registro_tree">
+            <field name="name">asistencias.registro.tree</field>
+            <field name="model">asistencias.registro</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+
+                <tree string="Registros" >
+                    <field name="laboratorio_name"></field>
+                    <field name="fecha"></field>
+                    <field name="nombre_estudiante"></field>
+                    <field name="usuario"></field>
+                    <field name="rol"></field>
+                    <field name="ciclo_estudiante"></field>
+                    <field name="paralelo_estudiante"></field>
+                </tree>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="view_registro_form">
+            <field name="name">asistencias.registro.form</field>
+            <field name="model">asistencias.registro</field>
+            <field name="arch" type="xml">
+                <form string= "Registro"  options= "{'no_create': True, 'no_create_edit': True}" >
+                    <header>
+                        <button type="object" name="action_reconocer"  string="Registrar Asistencia" class="oe_highlight"/>
+                    </header>
+                    <body>
+                        <video id="videos" width="450" autoplay="true" playsinline="true"></video>
+                        <canvas class="center-block" id="canvasOutput"  width="450"></canvas>
+                    </body>
+                    <footer>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <!-- actions opening views on models -->
+       <record model="ir.actions.act_window" id="action_view_registro">
+            <field name="name">Registro</field>
+            <field name="res_model">asistencias.registro</field>
+            <field name="type" >ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Crear un nuevo registro</p>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+
+
+

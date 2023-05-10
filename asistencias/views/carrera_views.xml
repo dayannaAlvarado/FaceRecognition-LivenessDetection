@@ -1,0 +1,45 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="view_carrera_form">
+            <field name="name">asistencias.carrera.form</field>
+            <field name="model">asistencias.carrera</field>
+            <field name="arch" type="xml">
+                <form string="Carrera">
+                    <sheet>
+                            <group>
+                                <field name="nombres" required="1" string="Nombres" ></field>
+                            </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_carrera_tree">
+            <field name="name">asistencias.carrera.tree</field>
+            <field name="model">asistencias.carrera</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Carreras">
+                    <field name="nombres"/>
+                </tree>
+            </field>
+        </record>
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="action_view_carrera">
+            <field name="name">Carrera</field>
+            <field name="res_model">asistencias.carrera</field>
+            <field name="type" >ir.actions.act_window</field>
+
+            <field name="view_mode">tree,form</field>
+
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Crea un nueva Carrera</p>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+
+
+

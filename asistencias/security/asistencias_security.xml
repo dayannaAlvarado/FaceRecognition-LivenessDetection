@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="module_category_asistencias" model="ir.module.category">
+            <field name="name">Asistencias</field>
+            <field name="sequence">22</field>
+        </record>
+
+        <record id="group_asistencias_asistencia_manager" model="res.groups">
+            <field name="name"> Asistencias / Administrador </field>
+            <field name="category_id" ref="module_category_asistencias"> </field>
+            <field name="users" eval="[(4, ref('base.user_root'))]" > </field>
+        </record>
+
+        <!-- >        -->
+
+        <record id="group_asistencias_docente" model="res.groups">
+            <field name="name">Asistencias / Docentes</field>
+            <field name="category_id" ref="module_category_asistencias" />
+        </record>
+
+        <record id="group_asistencias_admin" model="res.groups">
+            <field name="name">Asistencias / Admin</field>
+            <field name="category_id" ref="module_category_asistencias" />
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,54 @@
+<odoo>
+ <record id="view_usuario_form" model="ir.ui.view">
+   <field name="name">asistencias.usuario.form</field>
+   <field name="model">asistencias.usuario</field>
+   <field name="arch" type="xml">
+     <form string="formulario para agregar Usuarios">
+        <sheeet>
+          <group>
+              <!--<field name="imagen" widget="image"  nolabel="1" class="oe_left oe_avatar"  style="width:100px; height:100px;"/>-->
+
+                      <field name="name"    required="1"/>
+                      <field name="apellidos"  required="1"/>
+                      <field name="tipo_usuario" string="Tipo de Usuario"  required="1" />
+                      <field name="pid"  />
+                      <field name="cedula"/>
+            <!--<field name="fecha_nacimiento"/>-->
+                      <field name="telefono_convencional" />
+                      <field name="telefono_celular"/>
+
+          </group>
+        </sheeet>
+     </form>
+   </field>
+ </record>
+
+   <!-- El siguiente bloque de codigo es para colocar una tabla con todos los registroa ingresados-->
+<record id="view_usuario_tree" model="ir.ui.view">
+  <field name="name">asistencias.usuario.tree</field>
+     <field name="model">asistencias.usuario</field>
+      <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+       <tree string="formulario para agregar Usuarios">
+           <field name="name" />
+           <field name="apellidos"/>
+           <field name="cedula"/>
+           <field name="telefono_convencional" />
+           <field name="telefono_celular"/>
+           <field name="tipo_usuario"/>
+            <!--<field name="pid" />
+            <field name="imagen" />
+            <field name="fecha_nacimiento"/>-->
+       </tree>
+     </field>
+</record>
+  <record id="action_view_usuario" model="ir.actions.act_window">
+     <field name="name">Usuarios</field>
+    <field name="res_model" >asistencias.usuario</field>
+    <field name="type" >ir.actions.act_window</field>
+    <field name="view_mode" >tree,form</field>
+       <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Crea un nuevo usuario</p>
+            </field>
+  </record>
+</odoo>

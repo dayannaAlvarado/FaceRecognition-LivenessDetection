@@ -1,0 +1,76 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="view_estudiante_form">
+            <field name="name">asistencias.estudiante.form</field>
+            <field name="model">asistencias.estudiante</field>
+            <field name="arch" type="xml">
+                <form string="Estudiante">
+                    <header>
+                        <button type="object" name="action_fotos"  string="Descargar Foto" class="oe_highlight"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="identificacion" required="1" minlength="10" maxlength="10" placeholder="0000000"></field>
+                                <field name="nombres" required="1" string="Nombres" placeholder="ej. Juan Luis"></field>
+                                <field name="apellidos" required="1" placeholder="ej. Perez"></field>
+                                <field name="correo"  widget="email" required="1" string="Dirección de Correo" placeholder="Juan@tudominio.com"></field>
+                            </group>
+                            <group>
+                                <field name="ciclo" placeholder="Seleccionar"></field>
+                                <field name="paralelo" placeholder="Seleccionar"></field>
+                                <field name ="carrera_name" widget="selection"></field>
+                                <field name ="materia_name" widget="selection"></field>
+                                <field name ="docente_name" widget="selection"></field>
+                            </group>
+                            <group>
+                                 <field name="foto"  widget="image" width="100px" >
+                                </field>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_estudiante_tree">
+            <field name="name">asistencias.estudiante.tree</field>
+            <field name="model">asistencias.estudiante</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Estudiantes">
+                    <field name="identificacion"/>
+                    <field name="nombres"/>
+                    <field name="apellidos"/>
+                    <field name="ciclo"/>
+                    <field name="paralelo"/>
+                    <field name="correo"/>
+                    <field name="carrera_name"/>
+                    <field name="materia_name"/>
+                    <field name="docente_name"/>
+                </tree>
+            </field>
+        </record>
+
+
+
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="action_view_estudiante">
+            <field name="name">Estudiante</field>
+            <field name="res_model">asistencias.estudiante</field>
+            <field name="type" >ir.actions.act_window</field>
+
+            <field name="view_mode">tree,form</field>
+
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Crea un nuevo Estudiante</p>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+
+
+

@@ -1,0 +1,46 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="view_materia_form">
+            <field name="name">asistencias.materia.form</field>
+            <field name="model">asistencias.materia</field>
+            <field name="arch" type="xml">
+                <form string="Materia">
+                    <sheet>
+                            <group>
+                                <field name="nombres" required="1" ></field>
+                                <field name="carrera_name" required="1" ></field>
+                            </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_materia_tree">
+            <field name="name">asistencias.materia.tree</field>
+            <field name="model">asistencias.materia</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Materias">
+                    <field name="nombres"/>
+                    <field name="carrera_name"/>
+                </tree>
+            </field>
+        </record>
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="action_view_materia">
+            <field name="name">Materia</field>
+            <field name="res_model">asistencias.materia</field>
+            <field name="type" >ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Crea un nueva Materia</p>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+
+
+

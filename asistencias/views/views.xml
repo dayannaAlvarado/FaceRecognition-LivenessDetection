@@ -1,0 +1,129 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+
+           <record model="ir.ui.view" id="view_estudiante_tree">
+            <field name="name">asistencias.estudiante.tree</field>
+            <field name="model">asistencias.estudiante</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Estudiante">
+                    <field name="nombres"/>
+                    <field name="apellidos"/>
+                    <field name="identificacion"/>
+                    <field name="ciclo"/>
+                    <field name="foto"/>
+                    <field name="correo"/>
+                    <field name="docente_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_estudiante_form">
+            <field name="name">asistencias.estudiante.form</field>
+            <field name="model">asistencias.estudiante</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Estudiante">
+                    <sheet>
+
+                        <group>
+                            <group>
+                                <field name="nombres" required="1" string="Nombres" placeholder="ej. Juan Luis"></field>
+                                <field name="apellidos" required="1" placeholder="ej. Perez"></field>
+                                <field name="identificacion" required="1" placeholder="0000000"></field>
+                                <field name="ciclo" placeholder="Seleccionar"></field>
+
+                            </group>
+                            <group>
+                                 <field name="correo"  required="1" string="Dirección de Correo" placeholder="Juan@tudominio.com"></field>
+                            </group>
+                            <group>
+                                <field name="foto" widget="image" width="100px">
+
+                                <input type="file" name="file1"></input>
+                                </field>
+                                <field name ="docente_id"></field>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="action_view_estudiante">
+            <field name="name">Estudiante</field>
+            <field name="res_model">asistencias.estudiante</field>
+            <!--<field name="view_type">form</field>-->
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Crea un nuevo Estudiante</p>
+            </field>
+        </record>
+
+        <!--  DOCENTE-->
+        <record model="ir.ui.view" id="view_docente_tree">
+            <field name="name">asistencias.docente.tree</field>
+            <field name="model">asistencias.docente</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Docente">
+                    <field name="nombres"/>
+                    <field name="apellidos"/>
+                    <field name="foto"/>
+                    <!--<field name="estudiante_id"/>-->
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_docente_form">
+            <field name="name">asistencias.docente.form</field>
+            <field name="model">asistencias.docente</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Docente">
+                    <sheet>
+                        <group>
+                        <group>
+                            <field name="nombres" required="1" string="Nombres" placeholder="ej. Juan Luis"></field>
+                            <field name="apellidos" required="1" placeholder="ej. Perez"></field>
+                            <!--<field name="estudiante_id"/>-->
+                        </group>
+                        <group>
+                              <field name="foto" widget="image" width="100px"></field>
+                        </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="action_view_docente">
+            <field name="name">Docentes</field>
+            <field name="res_model">asistencias.docente</field>
+            <!--<field name="view_type">form</field>-->
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Registrar nuevo Docente</p>
+            </field>
+        </record>
+<!-- LABORATORIOS-->
+
+        <menuitem id="menu_asistencias" name="Asistencias" sequence="1"/>
+        <menuitem id="menu_estudiante" name="Estudiantes" parent="menu_asistencias"
+                  action="action_view_estudiante"/>
+        <menuitem id="menu_docente" name="Docentes" parent="menu_asistencias"
+                  action="action_view_docente"/>
+        <menuitem id="menu_laboratorio" name="Laboratorios" parent="menu_asistencias"
+                  action="action_view_laboratorio"/>
+    </data>
+</odoo>
+
+
+
+

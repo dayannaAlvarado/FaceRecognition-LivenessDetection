@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report id="report_custom"
+            string="Reporte de asistencias"
+            model="asistencias.registro"
+            report_type="qweb-pdf"
+            name="asistencias.report_custom_template"
+            menu="True"
+            print_report_name="Reporte de asistencias"
+        />
+        <template id="report_custom_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="page" style="font-size:16px">
+                            <div class="page">
+                                <div class="col-md-12" align="center">
+                                    <h2>Reporte de Asistencias</h2>
+                                </div>
+
+                                <table class ="table table-bordered">
+
+                                    <thead>
+
+                                    <tr>
+                                            <th>Laboratorio</th>
+                                            <th>Fecha</th>
+                                            <th>Nombres y Apellidos </th>
+                                            <th>Identificación </th>
+                                            <th>Rol </th>
+                                            <th>Ciclo </th>
+                                            <th>Paralelo </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr >
+                                        <td> <span t-field="o.laboratorio_name"/></td>
+                                         <td> <span t-field="o.fecha"/> </td>
+                                         <td> <span t-field="o.nombre_estudiante"/> </td>
+                                         <td> <span t-field="o.usuario"/> </td>
+                                        <td> <span t-field="o.rol"/> </td>
+                                        <td> <span t-field="o.ciclo_estudiante"/> </td>
+                                        <td> <span t-field="o.paralelo_estudiante"/> </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

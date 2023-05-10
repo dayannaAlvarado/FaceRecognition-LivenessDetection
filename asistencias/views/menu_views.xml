@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <act_window id="menu_root"
+        name="Sistema de Asistencias"
+        res_model="asistencias.estudiante"
+        view_id="view_estudiante_form"
+        view_mode= "tree, form"/>
+
+    <menuitem id="menu_asistencias" name="Asistencias" sequence="1"/>
+
+    <menuitem id="menu_estudiante" name="Estudiantes" sequence="1" parent="menu_asistencias" action="action_view_estudiante"/>
+    <menuitem id="menu_docente" name="Docentes"  sequence="2" parent="menu_asistencias"  action="action_view_docente"/>
+    <menuitem id="menu_carrera" name="Carreras"  sequence="3" parent="menu_asistencias" action="action_view_carrera"/>
+    <menuitem id="menu_materia" name="Materias"  sequence="4" parent="menu_asistencias" action="action_view_materia"/>
+     <menuitem id="menu_horario" name="Horarios"  sequence="5" parent="menu_asistencias" action="action_view_horario"/>
+    <menuitem id="menu_registro" name="Registro de Asistencia"  sequence="6" parent="menu_asistencias" action="action_view_registro"/>
+    <menuitem id="menu_usuario" name="Usuarios"  sequence="7" parent="menu_asistencias" action="action_view_usuario"/>
+
+</odoo>
+
+
+
+
